@@ -74,3 +74,34 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 150);
         });
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Menggunakan Intersection Observer API
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // Elemen akan mulai animasi ketika 15% bagiannya terlihat di layar
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Tambahkan class 'show' saat elemen terlihat
+                    entry.target.classList.add('show');
+                    
+                    // (Opsional) Hentikan observasi jika hanya ingin animasi berjalan 1x
+                    // observer.unobserve(entry.target); 
+                } else {
+                    // (Opsional) Hapus class 'show' jika ingin elemen beranimasi lagi saat di-scroll ulang ke atas/bawah
+                    // entry.target.classList.remove('show'); 
+                }
+            });
+        }, observerOptions);
+
+        // Pilih semua elemen yang memiliki class 'fade-up'
+        const fadeElements = document.querySelectorAll('.fade-up');
+        
+        fadeElements.forEach((el) => {
+            observer.observe(el);
+        });
+    });
