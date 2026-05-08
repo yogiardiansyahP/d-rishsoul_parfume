@@ -940,17 +940,34 @@ body {
         left: 0; /* Tarik menu masuk ke layar */
     }
 
+    .collection-section {
+        padding: 60px 5%; /* Mengurangi padding agar ruang konten lebih luas */
+    }
+
     .collection-header {
-        flex-direction: column;
+        flex-direction: column; /* Mengubah susunan header menjadi atas-bawah */
         gap: 20px;
+        margin-bottom: 40px;
     }
 
-    .header-left .title {
-        font-size: 32px;
-    }
-
+    .header-left, 
     .header-right {
+        width: 100%;
         max-width: 100%;
+    }
+
+    /* Menurunkan batas minmax agar kartu tidak meluber di layar tanggung */
+    .collection-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .stats h3 {
+        font-size: 45px;
+    }
+
+    .hero-right img {
+        width: 320px;
     }
 
     .ingredients-content {
@@ -995,5 +1012,95 @@ body {
     }
     .delay-6 {
         transition-delay: 0.35s;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column; /* Mengubah susunan menjadi atas-bawah */
+        text-align: center; /* Teks menjadi di tengah */
+        padding: 60px 40px;
+        gap: 50px;
+        min-height: auto;
+    }
+
+    .hero-left, 
+    .hero-right {
+        width: 100%; /* Mengambil lebar penuh */
+    }
+
+    .hero-left p {
+        width: 100%;
+        margin: 30px auto; /* Memastikan paragraf tetap di tengah */
+    }
+
+    .stats {
+        justify-content: center; /* Menengahkan elemen stats */
+        gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-left h1 {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .hero-left h2 {
+        font-size: 36px;
+    }
+
+    .stats {
+        flex-direction: column; /* Statistik memanjang ke bawah pada layar sangat kecil */
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .stats h3 {
+        font-size: 38px;
+    }
+
+    .hero-right img {
+        width: 250px;
+    }
+
+    .collection-section {
+        padding: 40px 20px; /* Padding dioptimalkan untuk layar sentuh kecil */
+    }
+
+    .header-left .title {
+        font-size: 32px; /* Menyesuaikan ukuran judul utama */
+    }
+
+    .header-right p {
+        font-size: 16px; /* Menyesuaikan teks deskripsi */
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr; /* Memaksa murni 1 kolom penuh ke bawah */
+        gap: 25px;
+    }
+
+    .card-image img {
+        height: 280px; /* Mengurangi tinggi gambar agar tidak memakan 1 full screen HP */
+    }
+
+    .card-content {
+        padding: 20px; /* Mengurangi padding dalam kartu agar teks mendapat ruang */
+    }
+
+    .card-content h3 {
+        font-size: 24px;
+    }
+
+    .card-content .desc {
+        font-size: 13px;
+        margin: 0 0 20px 0;
+    }
+
+    .tags span {
+        font-size: 11px;
+        padding: 5px 10px;
     }
 }

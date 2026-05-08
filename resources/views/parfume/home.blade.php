@@ -53,7 +53,7 @@
 
             <div class="stats">
                 <div class="item">
-                    <h3>10</h3>
+                    <h3>5</h3>
                     <span>Tahun Pengalaman</span>
                 </div>
 
@@ -133,7 +133,7 @@
             <div class="product-card animate-on-scroll fade-in-up delay-2">
                 <div class="card-image">
 
-                    <img src="/asset/image/koleksi.png" alt="Drish Soul Perfume">
+                    <img src="/asset/image/botol.jpeg" alt="Drish Soul Perfume">
                 </div>
                 <div class="card-content">
                     <h3>Soul</h3>
